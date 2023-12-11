@@ -1,0 +1,29 @@
+print('Chose a or b \n Explanation: \n - If you chose a - the program will count letters in your text \n - If you chose b - the program will create a dictionary of words')
+x = input()
+print('Enter your text')
+text = input()
+
+
+if x == 'a':
+    dict = {}
+    for char in text:
+        if(char.isalpha()):
+            char = char.lower()
+            if char in dict:
+                dict[char] += 1
+            else:
+                dict[char] = 1
+    for letter, time in dict.items():
+        print(f"Буква: '{letter}', разів: '{time}'")
+        
+elif x == 'b':
+    splitted = text.split() #розділяє текст і перетворює його в список з відокремленими словами, тобто елементами списку
+    for i in range(len(splitted)):
+        splitted[i] = splitted[i].lower()
+    sorted = [i for i in splitted if len(i) >= 3] # обирає тільки ті елементи списку (індекси), які мають 3 і більше букв 
+    clear_text = set(sorted) # забирає дублікати слів
+    clear_list = list(clear_text)
+    result = clear_list.sort()
+    print (clear_list)
+else:
+    print("Chose a or b. \nRestart please") 
