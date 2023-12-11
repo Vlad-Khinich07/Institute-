@@ -1,0 +1,12 @@
+text = input('Enter the text/word you want to encrypt: ')
+
+def encrypt(text):
+    list0 = list(text)
+    for i in list0[1::2]: # h e l l o - h l o
+        b = print(i)
+    for i in list0[0::2]: # h e l l o - e l
+        a = print(i)
+    result = print(a, b)
+    return result
+   
+encrypt(text)
